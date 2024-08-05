@@ -62,7 +62,23 @@
     [
       "@semantic-release/release-notes-generator",
       {
-        "preset": "conventionalcommits"
+        "preset": "conventionalcommits",
+        "presetConfig": {
+          "types": [
+            {"type": "feat", "section": "Features"},
+            {"type": "fix", "section": "Bug Fixes"},
+            {"type": "perf", "section": "Performance Improvements"},
+            {"type": "revert", "section": "Reverts"},
+            {"type": "docs", "section": "Documentation", "hidden": false},
+            {"type": "style", "section": "Styles", "hidden": true},
+            {"type": "chore", "section": "Miscellaneous Chores", "hidden": false},
+            {"type": "refactor", "section": "Code Refactoring", "hidden": false},
+            {"type": "test", "section": "Tests", "hidden": true},
+            {"type": "build", "section": "Build System", "false": true},
+            {"type": "ci", "section": "Continuous Integration", "hidden": false},
+            {"type": "improvement", "section": "Improvement", "hidden": false}
+          ]
+        }
       }
     ],
     [
