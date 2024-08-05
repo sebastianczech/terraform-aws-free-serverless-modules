@@ -1,6 +1,6 @@
 module "lambda" {
   source  = "sebastianczech/free-serverless-modules/aws//modules/lambda"
-  version = "1.1.2"
+  version = "1.1.2-rc.1"
 
   name          = "my-lambda"
   iam_user_name = "my-iam-user"
