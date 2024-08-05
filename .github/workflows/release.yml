@@ -7,6 +7,9 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: read
     if: github.repository_owner == 'sebastianczech'
     steps:
       - name: Checkout
