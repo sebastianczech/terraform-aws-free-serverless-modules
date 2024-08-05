@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1-rc.1](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.2.0...v1.2.1-rc.1) (2024-08-05)
+
+### Miscellaneous Chores
+
+* Use modules in version 1.1.2 ([a7c82ce](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/a7c82ce847008b0933368bfff3ea6ee993e94773))
+
+### Build System
+
+* Use modules in version 1.2.0 ([d264d6e](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/d264d6e64cbccc22832172fd5b9931d04fbb83bb))
+
 ## [1.2.0](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.1.2...v1.2.0) (2024-08-05)
 
 ### Features
