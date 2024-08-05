@@ -1,6 +1,18 @@
 version: 2
 updates:
   - package-ecosystem: "terraform"
-    directory: "/"
+    directory: "/modules/dynamodb"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "terraform"
+    directory: "/modules/lambda"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "terraform"
+    directory: "/modules/sns"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "terraform"
+    directory: "/modules/sqs"
     schedule:
       interval: "weekly"
