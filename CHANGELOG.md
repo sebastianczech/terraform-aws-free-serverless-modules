@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0-rc.1](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.1.2-rc.1...v1.2.0-rc.1) (2024-08-05)
+
+### Features
+
+* Use module 1.1.2-rc.1 ([188f98e](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/188f98e5a30d69304d63d3041bf2578e6f855e9c))
+
 ## [1.1.2-rc.1](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.1.1...v1.1.2-rc.1) (2024-08-05)
 
 ### Continuous Integration
