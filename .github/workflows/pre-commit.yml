@@ -41,20 +41,11 @@ jobs:
           directory: ${{ matrix.directory }}
 
       - name: Pre-commit Terraform ${{ steps.minMax.outputs.minVersion }}
-        if: ${{ matrix.directory !=  '.' }}
         uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
         with:
           terraform-version: ${{ steps.minMax.outputs.minVersion }}
           tflint-version: ${{ env.TFLINT_VERSION }}
-          args: 'terraform_validate --color=always --show-diff-on-failure --files ${{ matrix.directory }}/*'
-
-      - name: Pre-commit Terraform ${{ steps.minMax.outputs.minVersion }}
-        if: ${{ matrix.directory ==  '.' }}
-        uses: clowdhaus/terraform-composite-actions/pre-commit@v1.9.0
-        with:
-          terraform-version: ${{ steps.minMax.outputs.minVersion }}
-          tflint-version: ${{ env.TFLINT_VERSION }}
-          args: 'terraform_validate --color=always --show-diff-on-failure --files $(ls *.tf)'
+          terraform-docs-version: ${{ env.TERRAFORM_DOCS_VERSION }}
 
   preCommitMaxVersion:
     name: Max TF pre-commit
@@ -77,4 +68,3 @@ jobs:
           terraform-version: ${{ steps.minMax.outputs.maxVersion }}
           tflint-version: ${{ env.TFLINT_VERSION }}
           terraform-docs-version: ${{ env.TERRAFORM_DOCS_VERSION }}
-          install-hcledit: true
