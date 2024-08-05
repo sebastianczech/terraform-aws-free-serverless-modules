@@ -7,7 +7,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'terraform-aws-free-serverless-modules'
+    if: github.repository_owner == 'sebastianczech'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
