@@ -31,3 +31,13 @@ repos:
           - '--args=--only=terraform_workspace_remote'
           - '--args=--only=terraform_unused_required_providers'
       - id: terraform_validate
+        args:
+          - --hook-config=--retry-once-with-cleanup=true
+      ### below action lock the terraform providers versions
+      ### it can done also by command:
+      ### terraform providers lock -platform=linux_arm64 -platform=linux_amd64 -platform=darwin_amd64
+      # - id: terraform_providers_lock
+      #   args:
+      #     - --args=-platform=linux_arm64
+      #     - --args=-platform=linux_amd64
+      #     - --args=-platform=darwin_amd64
