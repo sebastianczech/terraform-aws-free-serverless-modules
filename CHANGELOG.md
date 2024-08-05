@@ -14,5 +14,3 @@ All notable changes to this project will be documented in this file.
 * Change GitHub token for release ([#7](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/7)) ([2b80121](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/2b80121700db984f008cebc89dd52fb3b17ba6f3))
 * Dependabot configuration ([#2](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/2)) ([8a09056](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/8a0905623232c5a873e8b6d47e6c6ef400adefb5))
 * Skip release on forks ([#6](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/6)) ([a522623](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/a52262372cf55fb2af932c8688ea696a434d2fb6))
-
-# Changelog
