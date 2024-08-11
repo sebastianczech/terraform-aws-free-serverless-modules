@@ -29,8 +29,9 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_email"></a> [email](#input\_email) | The email address to subscribe to the SNS topic | `string` | n/a | yes |
+| <a name="input_endpoint"></a> [endpoint](#input\_endpoint) | The email address to subscribe to the SNS topic | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | The name of the SNS topic | `string` | n/a | yes |
+| <a name="input_protocol"></a> [protocol](#input\_protocol) | The protocol type for the SNS subscription | `string` | n/a | yes |
 
 ## Outputs
 

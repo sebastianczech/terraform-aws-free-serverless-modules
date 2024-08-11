@@ -1,6 +1,5 @@
 module "lambda" {
-  source  = "sebastianczech/free-serverless-modules/aws//modules/lambda"
-  version = "1.1.2-rc.1"
+  source = "sebastianczech/free-serverless-modules/aws//modules/lambda"
 
   name          = "my-lambda"
   iam_user_name = "my-iam-user"
@@ -11,8 +10,7 @@ module "lambda" {
 }
 
 module "dynamodb" {
-  source  = "sebastianczech/free-serverless-modules/aws//modules/dynamodb"
-  version = "1.1.2-rc.1"
+  source = "sebastianczech/free-serverless-modules/aws//modules/dynamodb"
 
   name           = "my-dynamodb"
   read_capacity  = 5
@@ -20,16 +18,14 @@ module "dynamodb" {
 }
 
 module "sns" {
-  source  = "sebastianczech/free-serverless-modules/aws//modules/sns"
-  version = "1.1.2-rc.1"
+  source = "sebastianczech/free-serverless-modules/aws//modules/sns"
 
   name  = "my-sns"
   email = "example@example.com"
 }
 
 module "sqs" {
-  source  = "sebastianczech/free-serverless-modules/aws//modules/sqs"
-  version = "1.1.2-rc.1"
+  source = "sebastianczech/free-serverless-modules/aws//modules/sqs"
 
   name = "my-sqs"
 }

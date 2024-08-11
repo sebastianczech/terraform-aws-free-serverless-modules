@@ -3,10 +3,10 @@ resource "aws_dynamodb_table" "this" {
   name           = var.name
   read_capacity  = var.read_capacity
   write_capacity = var.write_capacity
-  hash_key       = "ID"
+  hash_key       = var.hash_key_name
 
   attribute {
-    name = "ID"
-    type = "S"
+    name = var.hash_key_name
+    type = var.hash_key_type
   }
 }
