@@ -16,24 +16,12 @@ resource "aws_iam_role" "this" {
   assume_role_policy = data.aws_iam_policy_document.this.json
 }
 
-# https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file
-data "archive_file" "this" {
-  type = "zip"
-  source {
-    content = templatefile("files/code.py", {
-      queue_url = var.sqs.url
-    })
-    filename = "coder.py"
-  }
-  output_path = "files/code.zip"
-}
-
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function
 resource "aws_lambda_function" "this" {
-  filename         = data.archive_file.this.output_path
+  filename         = var.filename
   function_name    = var.name
   role             = aws_iam_role.this.arn
-  source_code_hash = filebase64sha256(data.archive_file.this.output_path)
+  source_code_hash = filebase64sha256(var.filename)
 
   runtime = "python3.12"
   handler = "code.lambda_handler"

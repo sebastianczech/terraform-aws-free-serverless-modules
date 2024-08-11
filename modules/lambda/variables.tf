@@ -3,6 +3,11 @@ variable "name" {
   type        = string
 }
 
+variable "filename" {
+  description = "The filename of the Lambda function"
+  type        = string
+}
+
 variable "sqs" {
   description = "The SQS queue to subscribe to the SNS topic"
   type = object({
