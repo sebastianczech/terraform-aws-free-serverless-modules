@@ -20,8 +20,9 @@ module "dynamodb" {
 module "sns" {
   source = "sebastianczech/free-serverless-modules/aws//modules/sns"
 
-  name  = "my-sns"
-  email = "example@example.com"
+  name     = "my-sns"
+  protocol = "email"
+  endpoint = "example@example.com"
 }
 
 module "sqs" {

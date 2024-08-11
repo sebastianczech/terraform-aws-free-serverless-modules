@@ -6,8 +6,25 @@ variable "name" {
 variable "sqs" {
   description = "The SQS queue to subscribe to the SNS topic"
   type = object({
-    arn = string
-    url = string
+    enabled = optional(bool, false)
+    arn     = optional(string)
+    url     = optional(string)
+  })
+}
+
+variable "sns" {
+  description = "The SNS topic to publish events"
+  type = object({
+    enabled = optional(bool, false)
+    arn     = optional(string)
+  })
+}
+
+variable "dynamodb" {
+  description = "The DynamoDB table to put items"
+  type = object({
+    enabled = optional(bool, false)
+    arn     = optional(string)
   })
 }
 
