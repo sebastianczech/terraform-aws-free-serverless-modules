@@ -28,6 +28,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_hash_key_name"></a> [hash\_key\_name](#input\_hash\_key\_name) | The hash key name of the DynamoDB table | `string` | `"ID"` | no |
+| <a name="input_hash_key_type"></a> [hash\_key\_type](#input\_hash\_key\_type) | The hash key type of the DynamoDB table | `string` | `"S"` | no |
 | <a name="input_name"></a> [name](#input\_name) | The name of the DynamoDB table | `string` | n/a | yes |
 | <a name="input_read_capacity"></a> [read\_capacity](#input\_read\_capacity) | The read capacity of the DynamoDB table | `number` | `1` | no |
 | <a name="input_write_capacity"></a> [write\_capacity](#input\_write\_capacity) | The write capacity of the DynamoDB table | `number` | `1` | no |
