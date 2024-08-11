@@ -24,26 +24,6 @@ All notable changes to this project will be documented in this file.
 * Add pre-release from branch rc ([7ac036c](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/7ac036cae742ced6e7a357a304c9a36013244933))
 * Extend release config ([7410b9c](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/7410b9c6998130e8eafa5eb25c1da2e362166b6e))
 
-## [1.2.0](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.1.2...v1.2.0) (2024-08-05)
-
-### Features
-
-* Update examples ([#9](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/9)) ([9a8ee61](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/9a8ee618d05e07da8c8abe601ef9bc784265e122))
-
-## [1.2.0-rc.1](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.1.2-rc.1...v1.2.0-rc.1) (2024-08-05)
-
-### Features
-
-* Use module 1.1.2-rc.1 ([188f98e](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/188f98e5a30d69304d63d3041bf2578e6f855e9c))
-
-## [1.1.2-rc.1](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.1.1...v1.1.2-rc.1) (2024-08-05)
-
-### Continuous Integration
-
-* Extend release config ([7410b9c](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/7410b9c6998130e8eafa5eb25c1da2e362166b6e))
-
-## [1.1.1](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.1.0...v1.1.1) (2024-08-05)
-
 ## [1.1.0](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.0.0...v1.1.0) (2024-08-05)
 
 ### Features
