@@ -6,6 +6,6 @@ resource "aws_sns_topic" "this" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription
 resource "aws_sns_topic_subscription" "this" {
   topic_arn = aws_sns_topic.this.arn
-  protocol  = "email"
-  endpoint  = var.email
+  protocol  = var.protocol
+  endpoint  = var.endpoint
 }
