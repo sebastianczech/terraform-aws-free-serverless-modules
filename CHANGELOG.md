@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.1.0...v1.2.0) (2024-08-11)
+
+### Features
+
+* Extend basic example ([0c0c784](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/0c0c7846bca3d0e03a4c0be40fc122e1b4179d13))
+* Update examples ([#9](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/9)) ([9a8ee61](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/9a8ee618d05e07da8c8abe601ef9bc784265e122))
+
+### Bug Fixes
+
+* Refactor modules, extend pre-commit ([#10](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/10)) ([4131c95](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/4131c95c9e88a8363f409aaadb04598e0ebb9a71))
+
+### Miscellaneous Chores
+
+* **release:** version 1.1.1 [skip ci] ([b4704d0](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/b4704d06d2803145ee4314a89b8a5858b48ea1f9))
+* **release:** version 1.1.2 [skip ci] ([eae49d4](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/eae49d496d8b11ffd8278f26cfaa7c3b78bc49ed))
+* **release:** version 1.2.0 [skip ci] ([cb97388](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/cb9738826e3fa2f91ab4d35c0411a882b7659cf5)), closes [#9](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/9)
+
+### Continuous Integration
+
+* Add pre-release from branch rc ([7ac036c](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/7ac036cae742ced6e7a357a304c9a36013244933))
+* Extend release config ([7410b9c](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/7410b9c6998130e8eafa5eb25c1da2e362166b6e))
+
 ## [1.2.0](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.1.2...v1.2.0) (2024-08-05)
 
 ### Features
