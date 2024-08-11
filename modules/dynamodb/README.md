@@ -29,8 +29,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_name"></a> [name](#input\_name) | The name of the DynamoDB table | `string` | n/a | yes |
-| <a name="input_read_capacity"></a> [read\_capacity](#input\_read\_capacity) | The read capacity of the DynamoDB table | `string` | `"1"` | no |
-| <a name="input_write_capacity"></a> [write\_capacity](#input\_write\_capacity) | The write capacity of the DynamoDB table | `string` | `"1"` | no |
+| <a name="input_read_capacity"></a> [read\_capacity](#input\_read\_capacity) | The read capacity of the DynamoDB table | `number` | `1` | no |
+| <a name="input_write_capacity"></a> [write\_capacity](#input\_write\_capacity) | The write capacity of the DynamoDB table | `number` | `1` | no |
 
 ## Outputs
 

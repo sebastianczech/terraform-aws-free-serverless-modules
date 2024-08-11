@@ -5,12 +5,12 @@ variable "name" {
 
 variable "read_capacity" {
   description = "The read capacity of the DynamoDB table"
-  type        = string
-  default     = "1"
+  type        = number
+  default     = 1
 }
 
 variable "write_capacity" {
   description = "The write capacity of the DynamoDB table"
-  type        = string
-  default     = "1"
+  type        = number
+  default     = 1
 }
