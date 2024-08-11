@@ -92,6 +92,8 @@ check "lambda_deployed" {
 # https://awspolicygen.s3.amazonaws.com/policygen.html
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
 resource "aws_iam_policy" "lambda_sqs" {
+  count = var.sqs.enabled ? 1 : 0
+
   name        = "${var.name}_lambda_sqs"
   path        = "/"
   description = "IAM policy for sending messages to SQS from a Lambda"
@@ -118,12 +120,16 @@ EOF
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy_attachment
 resource "aws_iam_role_policy_attachment" "lambda_sqs" {
+  count = var.sqs.enabled ? 1 : 0
+
   role       = aws_iam_role.this.name
-  policy_arn = aws_iam_policy.lambda_sqs.arn
+  policy_arn = aws_iam_policy.lambda_sqs[0].arn
 }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
 resource "aws_iam_policy" "lambda_sns" {
+  count = var.sns.enabled ? 1 : 0
+
   name        = "${var.name}_lambda_sns"
   path        = "/"
   description = "IAM policy for publish events from Lambda to SNS"
@@ -147,12 +153,16 @@ EOF
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy_attachment
 resource "aws_iam_role_policy_attachment" "lambda_sns" {
+  count = var.sns.enabled ? 1 : 0
+
   role       = aws_iam_role.this.name
-  policy_arn = aws_iam_policy.lambda_sns.arn
+  policy_arn = aws_iam_policy.lambda_sns[0].arn
 }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
 resource "aws_iam_policy" "lambda_dynamodb" {
+  count = var.dynamodb.enabled ? 1 : 0
+
   name        = "${var.name}_lambda_dynamodb"
   path        = "/"
   description = "IAM policy for put items from Lambda to DynamoDB"
@@ -176,8 +186,10 @@ EOF
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy_attachment
 resource "aws_iam_role_policy_attachment" "lambda_dynamodb" {
+  count = var.dynamodb.enabled ? 1 : 0
+
   role       = aws_iam_role.this.name
-  policy_arn = aws_iam_policy.lambda_dynamodb.arn
+  policy_arn = aws_iam_policy.lambda_dynamodb[0].arn
 }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group
