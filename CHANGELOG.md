@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.2.0...v1.2.1) (2024-08-11)
+
+### Code Refactoring
+
+* Extend Lambda module ([#11](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/11)) ([63b7bab](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/63b7bab10ef4a0cc1898aa807051e249b6cfdfb9))
+
 ## [1.2.0](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.1.0...v1.2.0) (2024-08-11)
 
 ### Features
