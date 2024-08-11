@@ -1,3 +1,4 @@
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document
 data "aws_iam_policy_document" "this" {
   statement {
     effect  = "Allow"
@@ -9,11 +10,13 @@ data "aws_iam_policy_document" "this" {
   }
 }
 
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role
 resource "aws_iam_role" "this" {
   name               = "${var.name}_lambda_role"
   assume_role_policy = data.aws_iam_policy_document.this.json
 }
 
+# https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file
 data "archive_file" "this" {
   type = "zip"
   source {
@@ -23,34 +26,6 @@ data "archive_file" "this" {
     filename = "coder.py"
   }
   output_path = "files/code.zip"
-}
-
-# https://awspolicygen.s3.amazonaws.com/policygen.html
-resource "aws_iam_policy" "lambda_sqs" {
-  name        = "${var.name}_lambda_sqs"
-  path        = "/"
-  description = "IAM policy for sending messages to SQS from a Lambda"
-
-  policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "LambdaStatement",
-      "Action": [
-        "sqs:SendMessage"
-      ],
-      "Effect": "Allow",
-      "Resource": "${var.sqs.arn}"
-    }
-  ]
-}
-EOF
-}
-
-resource "aws_iam_role_policy_attachment" "lambda_sqs" {
-  role       = aws_iam_role.this.name
-  policy_arn = aws_iam_policy.lambda_sqs.arn
 }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function
@@ -71,11 +46,147 @@ resource "aws_lambda_function" "this" {
   }
 }
 
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function_url
+resource "aws_lambda_function_url" "this" {
+  function_name      = aws_lambda_function.this.function_name
+  authorization_type = "AWS_IAM" # "NONE"
+
+  cors {
+    allow_credentials = true
+    allow_origins     = ["*"]
+    allow_methods     = ["*"]
+    allow_headers     = ["date", "keep-alive"]
+    expose_headers    = ["keep-alive", "date"]
+    max_age           = 86400
+  }
+}
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_user
+data "aws_iam_user" "this" {
+  user_name = var.iam_user_name
+}
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission
+resource "aws_lambda_permission" "this" {
+  statement_id           = "AllowExecutionForIamUser"
+  action                 = "lambda:InvokeFunctionUrl"
+  function_name          = aws_lambda_function.this.function_name
+  function_url_auth_type = "AWS_IAM"
+  principal              = data.aws_iam_user.this.arn
+}
+
+# https://developer.hashicorp.com/terraform/language/checks
+check "lambda_deployed" {
+  data "external" "this" {
+    program = ["curl", aws_lambda_function_url.this.function_url]
+  }
+
+  assert {
+    condition = data.external.this.result.Message == "Forbidden"
+    error_message = format("The Lambda %s is not deployed.",
+      aws_lambda_function.this.function_name
+    )
+  }
+}
+
+# https://awspolicygen.s3.amazonaws.com/policygen.html
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
+resource "aws_iam_policy" "lambda_sqs" {
+  name        = "${var.name}_lambda_sqs"
+  path        = "/"
+  description = "IAM policy for sending messages to SQS from a Lambda"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LambdaStatement",
+      "Action": [
+        "sqs:SendMessage"
+        "sqs:ReceiveMessage",
+        "sqs:DeleteMessage",
+        "sqs:GetQueueAttributes"
+      ],
+      "Effect": "Allow",
+      "Resource": "${var.sqs.arn}"
+    }
+  ]
+}
+EOF
+}
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy_attachment
+resource "aws_iam_role_policy_attachment" "lambda_sqs" {
+  role       = aws_iam_role.this.name
+  policy_arn = aws_iam_policy.lambda_sqs.arn
+}
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
+resource "aws_iam_policy" "lambda_sns" {
+  name        = "${var.name}_lambda_sns"
+  path        = "/"
+  description = "IAM policy for publish events from Lambda to SNS"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LambdaStatement",
+      "Action": [
+        "sns:Publish"
+      ],
+      "Effect": "Allow",
+      "Resource": "${var.sns.arn}"
+    }
+  ]
+}
+EOF
+}
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy_attachment
+resource "aws_iam_role_policy_attachment" "lambda_sns" {
+  role       = aws_iam_role.this.name
+  policy_arn = aws_iam_policy.lambda_sns.arn
+}
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
+resource "aws_iam_policy" "lambda_dynamodb" {
+  name        = "${var.name}_lambda_dynamodb"
+  path        = "/"
+  description = "IAM policy for put items from Lambda to DynamoDB"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "LambdaStatement",
+      "Action": [
+        "dynamodb:PutItem"
+      ],
+      "Effect": "Allow",
+      "Resource": "${var.dynamodb.arn}"
+    }
+  ]
+}
+EOF
+}
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy_attachment
+resource "aws_iam_role_policy_attachment" "lambda_dynamodb" {
+  role       = aws_iam_role.this.name
+  policy_arn = aws_iam_policy.lambda_dynamodb.arn
+}
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group
 resource "aws_cloudwatch_log_group" "this" {
   name              = "/aws/lambda/${var.name}"
   retention_in_days = 1
 }
 
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy
 resource "aws_iam_policy" "lambda_logging" {
   name        = "${var.name}_lambda_logging"
   path        = "/"
@@ -99,46 +210,8 @@ resource "aws_iam_policy" "lambda_logging" {
 EOF
 }
 
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy_attachment
 resource "aws_iam_role_policy_attachment" "lambda_logging" {
   role       = aws_iam_role.this.name
   policy_arn = aws_iam_policy.lambda_logging.arn
-}
-
-resource "aws_lambda_function_url" "this" {
-  function_name      = aws_lambda_function.this.function_name
-  authorization_type = "AWS_IAM" # "NONE"
-
-  cors {
-    allow_credentials = true
-    allow_origins     = ["*"]
-    allow_methods     = ["*"]
-    allow_headers     = ["date", "keep-alive"]
-    expose_headers    = ["keep-alive", "date"]
-    max_age           = 86400
-  }
-}
-
-data "aws_iam_user" "this" {
-  user_name = var.iam_user_name
-}
-
-resource "aws_lambda_permission" "this" {
-  statement_id           = "AllowExecutionForIamUser"
-  action                 = "lambda:InvokeFunctionUrl"
-  function_name          = aws_lambda_function.this.function_name
-  function_url_auth_type = "AWS_IAM"
-  principal              = data.aws_iam_user.this.arn
-}
-
-check "lambda_deployed" {
-  data "external" "this" {
-    program = ["curl", aws_lambda_function_url.this.function_url]
-  }
-
-  assert {
-    condition = data.external.this.result.Message == "Forbidden"
-    error_message = format("The Lambda %s is not deployed.",
-      aws_lambda_function.this.function_name
-    )
-  }
 }

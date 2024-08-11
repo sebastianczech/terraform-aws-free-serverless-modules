@@ -26,10 +26,14 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_cloudwatch_log_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
+| [aws_iam_policy.lambda_dynamodb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_policy.lambda_logging](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_policy.lambda_sns](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_policy.lambda_sqs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_role.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.lambda_dynamodb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_role_policy_attachment.lambda_logging](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_iam_role_policy_attachment.lambda_sns](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_role_policy_attachment.lambda_sqs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_lambda_function.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
 | [aws_lambda_function_url.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function_url) | resource |
@@ -42,9 +46,11 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_dynamodb"></a> [dynamodb](#input\_dynamodb) | The DynamoDB table to put items | <pre>object({<br>    enabled = optional(bool, false)<br>    arn     = optional(string)<br>  })</pre> | n/a | yes |
 | <a name="input_iam_user_name"></a> [iam\_user\_name](#input\_iam\_user\_name) | The name of the IAM user | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | The name of the Lambda function | `string` | n/a | yes |
-| <a name="input_sqs"></a> [sqs](#input\_sqs) | The SQS queue to subscribe to the SNS topic | <pre>object({<br>    arn = string<br>    url = string<br>  })</pre> | n/a | yes |
+| <a name="input_sns"></a> [sns](#input\_sns) | The SNS topic to publish events | <pre>object({<br>    enabled = optional(bool, false)<br>    arn     = optional(string)<br>  })</pre> | n/a | yes |
+| <a name="input_sqs"></a> [sqs](#input\_sqs) | The SQS queue to subscribe to the SNS topic | <pre>object({<br>    enabled = optional(bool, false)<br>    arn     = optional(string)<br>    url     = optional(string)<br>  })</pre> | n/a | yes |
 
 ## Outputs
 
