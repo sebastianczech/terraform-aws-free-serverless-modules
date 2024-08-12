@@ -56,7 +56,9 @@ module "lambda_consumer" {
   handler  = "consumer.lambda_handler"
 
   sqs = {
-    enabled = false
+    enabled        = true
+    trigger_lambda = true
+    arn            = module.sqs.arn
   }
 
   sns = {
