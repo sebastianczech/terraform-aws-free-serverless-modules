@@ -13,4 +13,12 @@ Currently below AWS services & resources are supported:
 
 ## Usage
 
-## Examples
+### Basic example
+
+```bash
+terraform init
+
+terraform apply
+
+awscurl --service lambda --region us-east-1 --header 'Content-Type: application/json' --header 'Accept: application/json' --data '{"message": "example_post", "key": "118", "transport": "mail"}' "$(terraform output -raw lambda_url_producer)"
+```

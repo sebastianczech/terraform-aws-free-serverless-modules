@@ -3,12 +3,23 @@ variable "name" {
   type        = string
 }
 
+variable "filename" {
+  description = "The filename of the Lambda function"
+  type        = string
+}
+
+variable "handler" {
+  description = "The handler of the Lambda function"
+  type        = string
+}
+
 variable "sqs" {
   description = "The SQS queue to subscribe to the SNS topic"
   type = object({
-    enabled = optional(bool, false)
-    arn     = optional(string)
-    url     = optional(string)
+    enabled        = optional(bool, false)
+    trigger_lambda = optional(bool, false)
+    arn            = optional(string)
+    url            = optional(string)
   })
 }
 

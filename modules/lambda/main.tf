@@ -16,27 +16,15 @@ resource "aws_iam_role" "this" {
   assume_role_policy = data.aws_iam_policy_document.this.json
 }
 
-# https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file
-data "archive_file" "this" {
-  type = "zip"
-  source {
-    content = templatefile("files/code.py", {
-      queue_url = var.sqs.url
-    })
-    filename = "coder.py"
-  }
-  output_path = "files/code.zip"
-}
-
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function
 resource "aws_lambda_function" "this" {
-  filename         = data.archive_file.this.output_path
+  filename         = var.filename
   function_name    = var.name
   role             = aws_iam_role.this.arn
-  source_code_hash = filebase64sha256(data.archive_file.this.output_path)
+  source_code_hash = filebase64sha256(var.filename)
 
   runtime = "python3.12"
-  handler = "code.lambda_handler"
+  handler = var.handler
   timeout = 10
 
   environment {
@@ -105,7 +93,7 @@ resource "aws_iam_policy" "lambda_sqs" {
     {
       "Sid": "LambdaStatement",
       "Action": [
-        "sqs:SendMessage"
+        "sqs:SendMessage",
         "sqs:ReceiveMessage",
         "sqs:DeleteMessage",
         "sqs:GetQueueAttributes"
@@ -157,6 +145,13 @@ resource "aws_iam_role_policy_attachment" "lambda_sns" {
 
   role       = aws_iam_role.this.name
   policy_arn = aws_iam_policy.lambda_sns[0].arn
+}
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_event_source_mapping
+resource "aws_lambda_event_source_mapping" "this" {
+  count            = var.sqs.trigger_lambda ? 1 : 0
+  event_source_arn = var.sqs.arn
+  function_name    = aws_lambda_function.this.arn
 }
 
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
