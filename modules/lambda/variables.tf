@@ -8,6 +8,11 @@ variable "filename" {
   type        = string
 }
 
+variable "handler" {
+  description = "The handler of the Lambda function"
+  type        = string
+}
+
 variable "sqs" {
   description = "The SQS queue to subscribe to the SNS topic"
   type = object({

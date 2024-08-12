@@ -24,7 +24,7 @@ resource "aws_lambda_function" "this" {
   source_code_hash = filebase64sha256(var.filename)
 
   runtime = "python3.12"
-  handler = "code.lambda_handler"
+  handler = var.handler
   timeout = 10
 
   environment {
@@ -93,7 +93,7 @@ resource "aws_iam_policy" "lambda_sqs" {
     {
       "Sid": "LambdaStatement",
       "Action": [
-        "sqs:SendMessage"
+        "sqs:SendMessage",
         "sqs:ReceiveMessage",
         "sqs:DeleteMessage",
         "sqs:GetQueueAttributes"
