@@ -33,6 +33,7 @@ No modules.
 | [aws_iam_role_policy_attachment.lambda_logging](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_role_policy_attachment.lambda_sns](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_role_policy_attachment.lambda_sqs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_lambda_event_source_mapping.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_event_source_mapping) | resource |
 | [aws_lambda_function.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
 | [aws_lambda_function_url.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function_url) | resource |
 | [aws_lambda_permission.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
@@ -49,7 +50,7 @@ No modules.
 | <a name="input_iam_user_name"></a> [iam\_user\_name](#input\_iam\_user\_name) | The name of the IAM user | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | The name of the Lambda function | `string` | n/a | yes |
 | <a name="input_sns"></a> [sns](#input\_sns) | The SNS topic to publish events | <pre>object({<br>    enabled = optional(bool, false)<br>    arn     = optional(string)<br>  })</pre> | n/a | yes |
-| <a name="input_sqs"></a> [sqs](#input\_sqs) | The SQS queue to subscribe to the SNS topic | <pre>object({<br>    enabled = optional(bool, false)<br>    arn     = optional(string)<br>    url     = optional(string)<br>  })</pre> | n/a | yes |
+| <a name="input_sqs"></a> [sqs](#input\_sqs) | The SQS queue to subscribe to the SNS topic | <pre>object({<br>    enabled        = optional(bool, false)<br>    trigger_lambda = optional(bool, false)<br>    arn            = optional(string)<br>    url            = optional(string)<br>  })</pre> | n/a | yes |
 
 ## Outputs
 

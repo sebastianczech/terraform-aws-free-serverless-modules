@@ -16,9 +16,10 @@ variable "handler" {
 variable "sqs" {
   description = "The SQS queue to subscribe to the SNS topic"
   type = object({
-    enabled = optional(bool, false)
-    arn     = optional(string)
-    url     = optional(string)
+    enabled        = optional(bool, false)
+    trigger_lambda = optional(bool, false)
+    arn            = optional(string)
+    url            = optional(string)
   })
 }
 

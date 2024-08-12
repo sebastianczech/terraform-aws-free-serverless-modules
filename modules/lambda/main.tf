@@ -147,6 +147,13 @@ resource "aws_iam_role_policy_attachment" "lambda_sns" {
   policy_arn = aws_iam_policy.lambda_sns[0].arn
 }
 
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_event_source_mapping
+resource "aws_lambda_event_source_mapping" "this" {
+  count            = var.sqs.trigger_lambda ? 1 : 0
+  event_source_arn = var.sqs.arn
+  function_name    = aws_lambda_function.this.arn
+}
+
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy
 resource "aws_iam_policy" "lambda_dynamodb" {
   count = var.dynamodb.enabled ? 1 : 0
