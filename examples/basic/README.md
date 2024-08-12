@@ -41,5 +41,7 @@
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_lambda_url_producer"></a> [lambda\_url\_producer](#output\_lambda\_url\_producer) | The URL of the Lambda producer |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
