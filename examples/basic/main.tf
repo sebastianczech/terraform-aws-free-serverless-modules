@@ -24,13 +24,13 @@ data "archive_file" "consumer" {
 }
 
 module "lambda_producer" {
-  # source = "sebastianczech/free-serverless-modules/aws//modules/lambda"
   source = "../../modules/lambda"
 
   name          = "${var.prefix}-lambda-producer"
   iam_user_name = var.iam_username
 
   filename = data.archive_file.producer.output_path
+  handler  = "producer.lambda_handler"
 
   sqs = {
     enabled = true
@@ -47,17 +47,16 @@ module "lambda_producer" {
 }
 
 module "lambda_consumer" {
-  # source = "sebastianczech/free-serverless-modules/aws//modules/lambda"
   source = "../../modules/lambda"
 
   name          = "${var.prefix}-lambda-consumer"
   iam_user_name = var.iam_username
 
   filename = data.archive_file.consumer.output_path
+  handler  = "consumer.lambda_handler"
 
   sqs = {
-    enabled = true
-    arn     = module.sqs.arn
+    enabled = false
   }
 
   sns = {
@@ -72,16 +71,12 @@ module "lambda_consumer" {
 }
 
 module "dynamodb" {
-  # source = "sebastianczech/free-serverless-modules/aws//modules/dynamodb"
   source = "../../modules/dynamodb"
 
-  name           = "${var.prefix}-dynamodb"
-  read_capacity  = 5
-  write_capacity = 5
+  name = "${var.prefix}-dynamodb"
 }
 
 module "sns" {
-  # source = "sebastianczech/free-serverless-modules/aws//modules/sns"
   source = "../../modules/sns"
 
   name     = "${var.prefix}-sns"
@@ -90,7 +85,6 @@ module "sns" {
 }
 
 module "sqs" {
-  # source = "sebastianczech/free-serverless-modules/aws//modules/sqs"
   source = "../../modules/sqs"
 
   name = "${var.prefix}-sqs"

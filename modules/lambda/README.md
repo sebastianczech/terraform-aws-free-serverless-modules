@@ -45,6 +45,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_dynamodb"></a> [dynamodb](#input\_dynamodb) | The DynamoDB table to put items | <pre>object({<br>    enabled = optional(bool, false)<br>    arn     = optional(string)<br>  })</pre> | n/a | yes |
 | <a name="input_filename"></a> [filename](#input\_filename) | The filename of the Lambda function | `string` | n/a | yes |
+| <a name="input_handler"></a> [handler](#input\_handler) | The handler of the Lambda function | `string` | n/a | yes |
 | <a name="input_iam_user_name"></a> [iam\_user\_name](#input\_iam\_user\_name) | The name of the IAM user | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | The name of the Lambda function | `string` | n/a | yes |
 | <a name="input_sns"></a> [sns](#input\_sns) | The SNS topic to publish events | <pre>object({<br>    enabled = optional(bool, false)<br>    arn     = optional(string)<br>  })</pre> | n/a | yes |
