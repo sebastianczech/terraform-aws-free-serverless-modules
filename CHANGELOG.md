@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.3.1...v1.4.0) (2024-08-13)
+
+### Features
+
+* Example file with variables values ([#18](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/18)) ([498fc99](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/498fc996058bd11e354de8bb429035e42e03ed56))
+
 ## [1.3.1](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.3.0...v1.3.1) (2024-08-13)
 
 ### Documentation
