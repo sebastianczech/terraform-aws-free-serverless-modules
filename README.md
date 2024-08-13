@@ -3,22 +3,39 @@
 ## Available Features
 
 Currently below AWS services & resources are supported:
-- IAM roles and policies
-- Lambda
-- CloudWatch log group
+- Lambda with:
+  - CloudWatch log group
+  - IAM roles and policies
 - DynamoDB
 - SQS queue
 - SNS topic
-- S3 bucket
+
+## Prerequisites
+
+1. Install tools:
+- [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- [awscurl](https://github.com/okigan/awscurl)
+
+2. [Authenticate with IAM user credentials](https://docs.aws.amazon.com/cli/v1/userguide/cli-authentication-user.html)
 
 ## Usage
 
-### Basic example
+1. Initialize Terraform:
 
 ```bash
+cd examples/basic
 terraform init
+```
 
+2. Apply code for infrastructure:
+
+```bash
 terraform apply
+```
 
+3. Execute Lambda:
+
+```bash
 awscurl --service lambda --region us-east-1 --header 'Content-Type: application/json' --header 'Accept: application/json' --data '{"message": "example_post", "key": "118", "transport": "mail"}' "$(terraform output -raw lambda_url_producer)"
 ```
