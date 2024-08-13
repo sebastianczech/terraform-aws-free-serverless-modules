@@ -28,13 +28,20 @@ cd examples/basic
 terraform init
 ```
 
-2. Apply code for infrastructure:
+2. Prepare file with variables values:
+
+```bash
+cp example.tfvars terraform.tfvars
+vi terraform.tfvars
+```
+
+3. Apply code for infrastructure:
 
 ```bash
 terraform apply
 ```
 
-3. Execute Lambda:
+4. Execute Lambda:
 
 ```bash
 awscurl --service lambda --region us-east-1 --header 'Content-Type: application/json' --header 'Accept: application/json' --data '{"message": "example_post", "key": "118", "transport": "mail"}' "$(terraform output -raw lambda_url_producer)"
