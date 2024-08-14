@@ -13,10 +13,9 @@ Currently below AWS services & resources are supported:
 ## Prerequisites
 
 1. Install tools:
-- [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-- [awscurl](https://github.com/okigan/awscurl)
-
+   - [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+   - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+   - [awscurl](https://github.com/okigan/awscurl)
 2. [Authenticate with IAM user credentials](https://docs.aws.amazon.com/cli/v1/userguide/cli-authentication-user.html)
 
 ## Usage
