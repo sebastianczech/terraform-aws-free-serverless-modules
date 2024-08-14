@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.1](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.4.0...v1.4.1) (2024-08-14)
+
+### Continuous Integration
+
+* Fix CKV2_GHA_1: Ensure top-level permissions are not set to write-al ([#19](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/19)) ([fde2737](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/fde2737bb1192b336f5ee25de78cdda2c93c02c8))
+
 ## [1.4.0](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.3.1...v1.4.0) (2024-08-13)
 
 ### Features
