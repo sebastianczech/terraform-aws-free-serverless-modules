@@ -8,9 +8,27 @@ variable "filename" {
   type        = string
 }
 
+variable "runtime" {
+  description = "The runtime of the Lambda function"
+  default     = "python3.12"
+  type        = string
+}
+
 variable "handler" {
   description = "The handler of the Lambda function"
   type        = string
+}
+
+variable "timeout" {
+  description = "The timeout of the Lambda function"
+  default     = 10
+  type        = number
+}
+
+variable "concurrent_executions" {
+  description = "The number of concurrent executions of the Lambda function"
+  default     = 1
+  type        = number
 }
 
 variable "sqs" {
