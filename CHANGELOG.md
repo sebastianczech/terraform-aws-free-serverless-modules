@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.2](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.4.1...v1.4.2) (2024-08-17)
+
+### Bug Fixes
+
+* Fix CKV_AWS_115 - define concurrent execution limit ([#20](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/20)) ([9e4118e](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/9e4118e95dddbf28e0faae08b39867d00a7a4eb7))
+
 ## [1.4.1](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.4.0...v1.4.1) (2024-08-14)
 
 ### Continuous Integration
