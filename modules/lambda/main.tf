@@ -23,9 +23,10 @@ resource "aws_lambda_function" "this" {
   role             = aws_iam_role.this.arn
   source_code_hash = filebase64sha256(var.filename)
 
-  runtime = "python3.12"
-  handler = var.handler
-  timeout = 10
+  runtime                        = var.runtime
+  handler                        = var.handler
+  timeout                        = var.timeout
+  reserved_concurrent_executions = var.concurrent_executions
 
   environment {
     variables = {
