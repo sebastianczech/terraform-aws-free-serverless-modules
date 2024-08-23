@@ -45,3 +45,9 @@ terraform apply
 ```bash
 awscurl --service lambda --region us-east-1 --header 'Content-Type: application/json' --header 'Accept: application/json' --data '{"message": "example_post", "key": "118", "transport": "mail"}' "$(terraform output -raw lambda_url_producer)"
 ```
+
+## Links
+
+* [Serverless Patterns Collection](https://serverlessland.com/patterns?framework=Terraform+%28with+modules%29)
+* [Doing serverless with Terraform](https://serverless.tf/)
+* [Serverless on AWS](https://aws.amazon.com/serverless/)
