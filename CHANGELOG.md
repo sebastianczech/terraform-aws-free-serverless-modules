@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.9](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.4.8...v1.4.9) (2024-10-19)
+
+### Bug Fixes
+
+* Update versions for example and modules ([#59](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/59)) ([db7a63a](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/db7a63a9424324836cc972e4dc852fe4d68de28c))
+
+### Miscellaneous Chores
+
+* **deps:** bump hashicorp/aws from 5.69.0 to 5.71.0 in /modules/dynamodb ([#56](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/56)) ([89605e7](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/89605e7ab67e2e2d93c152907068f734b9beb537))
+* **deps:** bump hashicorp/aws from 5.69.0 to 5.71.0 in /modules/lambda ([#58](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/58)) ([00d5e3d](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/00d5e3d923823d2d01e83f0355b9bba31e8dc7bd))
+* **deps:** bump hashicorp/aws from 5.69.0 to 5.71.0 in /modules/sns ([#57](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/57)) ([1d2ac3b](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/1d2ac3bc4c8d4e74a0f33cf1fdeec4ef12062493))
+* **deps:** bump hashicorp/aws from 5.69.0 to 5.71.0 in /modules/sqs ([#55](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/55)) ([f3aea67](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/f3aea6724c4c28da5fed051e092faafa88118fb5))
+
+### Continuous Integration
+
+* Add gitleaks to pre-commit ([c99047c](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/c99047c14dd88695c99b277c635ec8419145f1b3))
+* Add Super Linter ([f795cb7](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/f795cb7ce28a3b2f4d1648e896944d9b15e657c4))
+* Scan code using Trivy ([#54](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/54)) ([649bd59](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/649bd5920b966844a5b6c304d9c1db7c0547ade4))
+
 ## [1.4.8](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.4.7...v1.4.8) (2024-10-03)
 
 ### Miscellaneous Chores
