@@ -6,14 +6,14 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.61 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.71 |
 | <a name="requirement_external"></a> [external](#requirement\_external) | ~> 2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.61 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.71 |
 
 ## Modules
 
