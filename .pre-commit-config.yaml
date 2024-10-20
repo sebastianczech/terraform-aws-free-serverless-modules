@@ -61,3 +61,10 @@ repos:
           --skip-check, "CKV_AWS_26,CKV_AWS_27,CKV_AWS_28,CKV_AWS_50,CKV_AWS_116,CKV_AWS_119,CKV_AWS_117,CKV_AWS_158,CKV_AWS_173,CKV_AWS_272,CKV_AWS_338,CKV2_AWS_16",
           --soft-fail-on, "CKV2_GHA_1",
         ]
+# -   repo: https://github.com/tenable/terrascan
+#     rev: v1.19.9
+#     hooks:
+#       - id: terraform-pre-commit
+#         args: [ '-i terraform' ]
+#         files: ^.*\.tf$
+#         exclude: ^\.github/.*  # Exclude the .github directory
