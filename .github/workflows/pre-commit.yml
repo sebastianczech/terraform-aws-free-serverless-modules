@@ -26,6 +26,10 @@ permissions:
   statuses: none
 
 jobs:
+  # currently there are defined only some selected scanners:
+  # https://github.com/sebastianczech/terraform-aws-free-serverless-modules/settings/variables/actions
+  # to see all possible scanners, please visit:
+  # https://github.com/super-linter/super-linter
   superLinter:
     name: Lint
     runs-on: ubuntu-latest
