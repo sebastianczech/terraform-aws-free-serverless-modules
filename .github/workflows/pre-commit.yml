@@ -48,6 +48,9 @@ jobs:
       - name: Super-linter
         uses: super-linter/super-linter@v7.1.0
         env:
+          VALIDATE_CHECKOV: ${{ env.VALIDATE_CHECKOV }}
+          VALIDATE_GITLEAKS: ${{ env.VALIDATE_GITLEAKS }}
+          VALIDATE_YAML: ${{ env.VALIDATE_YAML }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   collectInputs:
