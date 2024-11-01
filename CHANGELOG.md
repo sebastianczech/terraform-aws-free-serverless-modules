@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.4.9...v1.5.0) (2024-11-01)
+
+### Features
+
+* Enable DynamoDB encryption ([#64](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/64)) ([386166f](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/386166fa2a333bd3512dadf2242ddeb49b858880))
+
+### Miscellaneous Chores
+
+* Add terrascan ([619163b](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/619163b3533bb7c23111c87a0b0fe8889a2bef86))
+* **deps:** bump hashicorp/aws from 5.72.1 to 5.73.0 in /modules/dynamodb ([#60](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/60)) ([f0bce4f](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/f0bce4fc1edc63b21f6e8000fcd2b8fc57fe299a))
+* **deps:** bump hashicorp/aws from 5.72.1 to 5.73.0 in /modules/lambda ([#61](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/61)) ([ea39fe2](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/ea39fe25bdb3e7ae6887d264abd921a623c15503))
+* **deps:** bump hashicorp/aws from 5.72.1 to 5.73.0 in /modules/sns ([#63](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/63)) ([1e49132](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/1e49132ae5c7b0e525f51affa41528262f93294d))
+* **deps:** bump hashicorp/aws from 5.72.1 to 5.73.0 in /modules/sqs ([#62](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/62)) ([2e3c630](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/2e3c63002295c52cf1b034dc4cef6f830ab2bc55))
+
 ## [1.4.9](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.4.8...v1.4.9) (2024-10-19)
 
 ### Bug Fixes
