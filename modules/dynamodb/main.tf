@@ -9,4 +9,8 @@ resource "aws_dynamodb_table" "this" {
     name = var.hash_key_name
     type = var.hash_key_type
   }
+
+  server_side_encryption {
+    enabled = true
+  }
 }
