@@ -1,0 +1,29 @@
+version: '3'
+
+tasks:
+  example-deploy:
+    cmds:
+      - terraform init
+      - terraform apply -auto-approve
+    dir: examples/basic
+
+  example-destroy:
+    cmds:
+      - terraform destroy -auto-approve
+    dir: examples/basic
+
+  example-check:
+    cmds:
+      - |
+        terraform state list
+        awscurl --service lambda --region us-east-1 --header 'Content-Type: application/json' --header 'Accept: application/json' --data '{"message": "example_post", "key": "118", "transport": "mail"}' "$(terraform output -raw lambda_url_producer)"
+    dir: examples/basic
+
+  prepare-tfvars:
+    cmds:
+      - cp example.tfvars terraform.tfvars
+    dir: examples/basic
+
+  awscurl-install-mac:
+    cmds:
+      - brew install awscurl
