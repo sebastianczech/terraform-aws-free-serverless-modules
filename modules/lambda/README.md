@@ -45,14 +45,14 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_concurrent_executions"></a> [concurrent\_executions](#input\_concurrent\_executions) | The number of concurrent executions of the Lambda function | `number` | `1` | no |
-| <a name="input_dynamodb"></a> [dynamodb](#input\_dynamodb) | The DynamoDB table to put items | <pre>object({<br>    enabled = optional(bool, false)<br>    arn     = optional(string)<br>  })</pre> | n/a | yes |
+| <a name="input_dynamodb"></a> [dynamodb](#input\_dynamodb) | The DynamoDB table to put items | <pre>object({<br/>    enabled = optional(bool, false)<br/>    arn     = optional(string)<br/>  })</pre> | n/a | yes |
 | <a name="input_filename"></a> [filename](#input\_filename) | The filename of the Lambda function | `string` | n/a | yes |
 | <a name="input_handler"></a> [handler](#input\_handler) | The handler of the Lambda function | `string` | n/a | yes |
 | <a name="input_iam_user_name"></a> [iam\_user\_name](#input\_iam\_user\_name) | The name of the IAM user | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | The name of the Lambda function | `string` | n/a | yes |
 | <a name="input_runtime"></a> [runtime](#input\_runtime) | The runtime of the Lambda function | `string` | `"python3.12"` | no |
-| <a name="input_sns"></a> [sns](#input\_sns) | The SNS topic to publish events | <pre>object({<br>    enabled = optional(bool, false)<br>    arn     = optional(string)<br>  })</pre> | n/a | yes |
-| <a name="input_sqs"></a> [sqs](#input\_sqs) | The SQS queue to subscribe to the SNS topic | <pre>object({<br>    enabled        = optional(bool, false)<br>    trigger_lambda = optional(bool, false)<br>    arn            = optional(string)<br>    url            = optional(string)<br>  })</pre> | n/a | yes |
+| <a name="input_sns"></a> [sns](#input\_sns) | The SNS topic to publish events | <pre>object({<br/>    enabled = optional(bool, false)<br/>    arn     = optional(string)<br/>  })</pre> | n/a | yes |
+| <a name="input_sqs"></a> [sqs](#input\_sqs) | The SQS queue to subscribe to the SNS topic | <pre>object({<br/>    enabled        = optional(bool, false)<br/>    trigger_lambda = optional(bool, false)<br/>    arn            = optional(string)<br/>    url            = optional(string)<br/>  })</pre> | n/a | yes |
 | <a name="input_timeout"></a> [timeout](#input\_timeout) | The timeout of the Lambda function | `number` | `10` | no |
 
 ## Outputs
