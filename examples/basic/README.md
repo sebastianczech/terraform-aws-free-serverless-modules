@@ -1,6 +1,6 @@
 # Basic example
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -44,4 +44,4 @@
 | Name | Description |
 |------|-------------|
 | <a name="output_lambda_url_producer"></a> [lambda\_url\_producer](#output\_lambda\_url\_producer) | The URL of the Lambda producer |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
