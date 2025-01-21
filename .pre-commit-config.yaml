@@ -40,7 +40,8 @@ repos:
           - --tf-init-args=-upgrade
       - id: terraform_trivy
         args:
-          - '--args=--ignorefile=__GIT_WORKING_DIR__/.trivyignore --exit-code=0'
+          - '--args=--ignorefile=__GIT_WORKING_DIR__/.trivyignore'
+          - --hook-config=--parallelism-limit=1
       ### below action lock the terraform providers versions
       ### it can done also by command:
       ### terraform providers lock -platform=linux_arm64 -platform=linux_amd64 -platform=darwin_amd64
