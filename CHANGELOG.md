@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.4](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.5.3...v1.5.4) (2025-01-21)
+
+### Miscellaneous Chores
+
+* Add `taskfile`, upgrade `pre-commit-terraform`, use latest `terraform-docs`, fix `trivy` error ([#101](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/101)) ([6373b91](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/6373b91c4bcac390ad015cbd1e38a27ba6cf7e5f))
+* **deps:** bump hashicorp/aws from 5.80.0 to 5.84.0 in /modules/dynamodb ([#99](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/99)) ([d31e54e](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/d31e54e49c7b0f3e8156c11cecee7e23f8442158))
+* **deps:** bump hashicorp/aws from 5.80.0 to 5.84.0 in /modules/lambda ([#97](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/97)) ([d46db90](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/d46db908fa63fdf01d259d2c6929f69d832410f6))
+* **deps:** bump hashicorp/aws from 5.80.0 to 5.84.0 in /modules/sns ([#98](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/98)) ([87bd1ae](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/87bd1ae1955ad57053048d3757197a2730a77dc0))
+* **deps:** bump hashicorp/aws from 5.80.0 to 5.84.0 in /modules/sqs ([#100](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/100)) ([68af184](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/68af184cacbe0e5b94944d83b37c75903a69c35b))
+
 ## [1.5.3](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.5.2...v1.5.3) (2024-12-08)
 
 ### Miscellaneous Chores
