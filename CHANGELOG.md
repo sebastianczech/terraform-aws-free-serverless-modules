@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.5](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.5.4...v1.5.5) (2025-02-11)
+
+### Miscellaneous Chores
+
+* **deps:** bump hashicorp/aws from 5.84.0 to 5.86.0 in /modules/dynamodb ([#102](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/102)) ([e7e8509](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/e7e850991de06a43839f7dd51f370facff7218d1))
+* **deps:** bump hashicorp/aws from 5.84.0 to 5.86.0 in /modules/lambda ([#104](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/104)) ([51ba2b9](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/51ba2b989a112f6a10f6a9ccf6bd0a130bf20838))
+* **deps:** bump hashicorp/aws from 5.84.0 to 5.86.0 in /modules/sns ([#105](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/105)) ([823870a](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/823870ae7e3f97f05c28a0732edb7be1252ecc17))
+* **deps:** bump hashicorp/aws from 5.84.0 to 5.86.0 in /modules/sqs ([#103](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/103)) ([e9d9e6d](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/e9d9e6d82a157696377bc25cef45931572fbb072))
+* Upgrade dependencies ([#106](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/106)) ([ea862ef](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/ea862ef3a2f0e59e8f032dd4cc8be514d59c84d8))
+
+### Continuous Integration
+
+* New workflow for upgrading dependencies ([f60024f](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/f60024ffd46ed652f30ee06f5ec92c4cd75cf035))
+
 ## [1.5.4](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.5.3...v1.5.4) (2025-01-21)
 
 ### Miscellaneous Chores
