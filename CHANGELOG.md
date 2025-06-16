@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.10](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.5.9...v1.5.10) (2025-06-16)
+
+### Miscellaneous Chores
+
+* **deps:** bump hashicorp/aws from 5.94.1 to 5.99.1 in /modules/dynamodb ([#151](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/151)) ([be29da2](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/be29da2d7d06b692f0208b7810a81655834ac2f6))
+* **deps:** bump hashicorp/aws from 5.94.1 to 5.99.1 in /modules/lambda ([#149](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/149)) ([ea9758b](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/ea9758b0b980c439d863bfe6db802b001961d36c))
+* **deps:** bump hashicorp/aws from 5.94.1 to 5.99.1 in /modules/sns ([#150](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/150)) ([4674bbb](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/4674bbb0f5af8ccc94f61eb6d3e6b83a5875fe63))
+* **deps:** bump hashicorp/aws from 5.94.1 to 5.99.1 in /modules/sqs ([#148](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/148)) ([337771b](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/337771b1b629629f15d4ee42267948403bd52e99))
+* **deps:** bump hashicorp/external from 2.3.4 to 2.3.5 in /modules/lambda ([#143](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/143)) ([d3e7028](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/d3e7028550a68875431708e4dc50122b85933387))
+* Upgrade dependencies ([#152](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/issues/152)) ([a889107](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/commit/a88910704cfa7317172a28a50d415ba2cdc55105))
+
 ## [1.5.9](https://github.com/sebastianczech/terraform-aws-free-serverless-modules/compare/v1.5.8...v1.5.9) (2025-04-05)
 
 ### Miscellaneous Chores
