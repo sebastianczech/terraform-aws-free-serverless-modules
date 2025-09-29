@@ -3,16 +3,16 @@ updates:
   - package-ecosystem: "terraform"
     directory: "/modules/dynamodb"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
   - package-ecosystem: "terraform"
     directory: "/modules/lambda"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
   - package-ecosystem: "terraform"
     directory: "/modules/sns"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
   - package-ecosystem: "terraform"
     directory: "/modules/sqs"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
