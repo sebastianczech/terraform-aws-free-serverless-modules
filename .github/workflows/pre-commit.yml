@@ -52,7 +52,7 @@ jobs:
           fetch-depth: 0
 
       - name: Super-linter
-        uses: super-linter/super-linter@v7.1.0
+        uses: super-linter/super-linter@v8.3.1
         env:
           VALIDATE_CHECKOV: ${{ vars.VALIDATE_CHECKOV }}
           VALIDATE_GITLEAKS: ${{ vars.VALIDATE_GITLEAKS }}
